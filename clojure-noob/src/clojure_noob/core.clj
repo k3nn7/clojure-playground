@@ -113,7 +113,10 @@
     "Prints example vectors"
     []
     (do
-        (println "Empty vector" [])))
+        (println "Empty vector" [])
+        (println "Some vector" [1 2 3 4 5])
+        (println "Get vector 3rd element:" ([1 2 3 4 5] 3))
+        (println "Append element to vector" (conj [1 2 3 4 5] 10))))
 
 (defn hello-data-structures
     "Data structures examples"
