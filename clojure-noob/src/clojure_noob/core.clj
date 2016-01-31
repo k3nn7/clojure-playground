@@ -128,6 +128,16 @@
         (println "Prepend list with element" (conj '(1 2 3 4) 5))
         ))
 
+(defn hello-sets
+    "Prints example sets"
+    []
+    (do
+        (println "Empty set" #{})
+        (println "Some set" #{1 3 "abc" :foo})
+        (println "Set with duplicates" (hash-set 1 1 2 2))
+        (println "Set from vector" (set [1 1 2 2 3 3]))
+        (println "Contains?" (contains? #{1 3 5} 4))))
+
 (defn hello-data-structures
     "Data structures examples"
     []
@@ -135,7 +145,8 @@
         (hello-ratio)
         (hello-maps)
         (hello-vectors)
-        (hello-lists)))
+        (hello-lists)
+        (hello-sets)))
 
 (defn -main
   "Executes set of hello-world functions"
