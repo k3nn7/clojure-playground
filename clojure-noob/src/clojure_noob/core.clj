@@ -115,8 +115,18 @@
     (do
         (println "Empty vector" [])
         (println "Some vector" [1 2 3 4 5])
-        (println "Get vector 3rd element:" ([1 2 3 4 5] 3))
+        (println "Get vector 4rd element:" ([1 2 3 4 5] 3))
         (println "Append element to vector" (conj [1 2 3 4 5] 10))))
+
+(defn hello-lists
+    "Prints example lists"
+    []
+    (do
+        (println "Empty list" '())
+        (println "Some list" '(1 2 3 4))
+        (println "Get list 3rd element" (nth '(1 2 3 4) 2))
+        (println "Prepend list with element" (conj '(1 2 3 4) 5))
+        ))
 
 (defn hello-data-structures
     "Data structures examples"
@@ -124,7 +134,8 @@
     (do
         (hello-ratio)
         (hello-maps)
-        (hello-vectors)))
+        (hello-vectors)
+        (hello-lists)))
 
 (defn -main
   "Executes set of hello-world functions"
