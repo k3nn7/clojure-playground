@@ -196,10 +196,30 @@
         (greet-all "K3nn7" "Foo" "Bar")
         (equipment "K3nn7" "axe" "shield" "armor")))
 
+; Destructuring
+(defn first-element
+  [[first-thing]]
+  (println "First thing:" first-thing))
+
+(defn hello-user
+  [{name :name email :email}]
+  (println "User:" name "email:" email))
+
+(defn hello-user-2
+  [{:keys [name email]}]
+  (println "User2:" name "email:" email))
+
+(defn destructuring
+  []
+  (first-element ["foo" "bar" "baz"])
+  (hello-user {:name "k3nn7" :email "k3nn7@example.com"})
+  (hello-user-2 {:name "foo" :email "foo@example.com"}))
+
 (defn -main
   "Executes set of hello-world functions"
   [& args]
   (do
       (hello-forms)
       (hello-data-structures)
-      (hello-functions)))
+      (hello-functions)
+      (destructuring)))
