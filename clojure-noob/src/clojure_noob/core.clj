@@ -183,6 +183,18 @@
   (println name "has in backpack:"
     (clojure.string/join ", " items)))
 
+(defn hello-anonymous
+  [greeting & people]
+  (println (map
+    (fn [name] (str greeting " " name))
+    people)))
+
+(defn hello-anonymous-short
+  [greeting & people]
+  (println (map
+    #(str greeting " " %)
+    people)))
+
 (defn hello-functions
     "Varioud functions examples"
     []
@@ -194,7 +206,9 @@
         (hello-default)
         (hello-default "K3nn7")
         (greet-all "K3nn7" "Foo" "Bar")
-        (equipment "K3nn7" "axe" "shield" "armor")))
+        (equipment "K3nn7" "axe" "shield" "armor")
+        (hello-anonymous "Hi" "foo" "bar" "baz")
+        (hello-anonymous-short "Welcome" "baz" "bar" "foo")))
 
 ; Destructuring
 (defn first-element
