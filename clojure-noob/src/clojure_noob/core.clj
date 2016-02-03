@@ -264,6 +264,24 @@
         (recur remaining
           (into final-body-parts (set [part (matching-part part)])))))))
 
+(defn better-symmetrize-body-parts
+  [asym-body-parts]
+  (let [f (fn [final-body-parts part]
+            (into final-body-parts (set [part (matching-part part)])))]
+    (reduce f [] asym-body-parts)
+  ))
+
+(defn hit
+  [asym-body-parts]
+  (let [sym-parts (better-symmetrize-body-parts asym-body-parts)
+        body-part-size-sum (reduce + (map :size sym-parts))
+        target (rand body-part-size-sum)]
+      (loop [[part & remaining] sym-parts
+             accumulated-size (:size part)]
+           (if (> accumulated-size target)
+             part
+             (recur remaining (+ accumulated-size (:size (first remaining))))))))
+
 ;Looping
 (defn loop-example
   []
@@ -281,5 +299,6 @@
       (hello-data-structures)
       (hello-functions)
       (destructuring)
-      (symmetrize-body-parts asym-hobbit-body-parts)
+      (println (better-symmetrize-body-parts asym-hobbit-body-parts))
+      (println (hit asym-hobbit-body-parts))
       (loop-example)))
