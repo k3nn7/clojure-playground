@@ -49,14 +49,13 @@
 (defn hello
     "Varioud functions examples"
     []
-    (do
-        (map-example)
-        (hello-name "K3nn7")
-        (multi-arity 1 2)
-        (multi-arity 1 2 3)
-        (hello-default)
-        (hello-default "K3nn7")
-        (greet-all "K3nn7" "Foo" "Bar")
-        (equipment "K3nn7" "axe" "shield" "armor")
-        (hello-anonymous "Hi" "foo" "bar" "baz")
-        (hello-anonymous-short "Welcome" "baz" "bar" "foo")))
+      (map-example)
+      (hello-name "K3nn7")
+      (multi-arity 1 2)
+      (multi-arity 1 2 3)
+      (hello-default)
+      (hello-default "K3nn7")
+      (greet-all "K3nn7" "Foo" "Bar")
+      (equipment "K3nn7" "axe" "shield" "armor")
+      (hello-anonymous "Hi" "foo" "bar" "baz")
+      (hello-anonymous-short "Welcome" "baz" "bar" "foo"))

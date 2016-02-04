@@ -11,11 +11,10 @@
 (defn -main
   "Executes set of hello-world functions"
   [& args]
-  (do
-      (forms/hello)
-      (data/hello)
-      (functions/hello)
-      (destructuring/hello)
-      (println (hobbit/better-symmetrize-body-parts hobbit/asym-hobbit-body-parts))
-      (println (hobbit/hit hobbit/asym-hobbit-body-parts))
-      (loops/hello)))
+  (forms/hello)
+  (data/hello)
+  (functions/hello)
+  (destructuring/hello)
+  (println (hobbit/better-symmetrize-body-parts hobbit/asym-hobbit-body-parts))
+  (println (hobbit/hit hobbit/asym-hobbit-body-parts))
+  (loops/hello))
